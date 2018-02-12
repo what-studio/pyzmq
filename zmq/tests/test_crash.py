@@ -57,7 +57,6 @@ class TestPubSubCrash(BaseZMQTestCase):
         return sub, addr
 
     @capture_crash
-    @pytest.mark.xfail
     def test_pubsub_crash(self, random=Random(42)):
         pub = self.socket(zmq.PUB)
         sub1, addr1 = self.create_sub()
